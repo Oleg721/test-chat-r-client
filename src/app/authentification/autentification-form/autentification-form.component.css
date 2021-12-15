@@ -5,33 +5,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 7rem;
 }
 
-div.main-form {
+
+div.user-form {
   background-color: #318fb5;
   padding: 2rem;
-  margin-bottom: 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   /*border-radius: 15px;*/
 }
+
 
 a{
   color: white;
 }
 
-div.main-form p{
- font-size: x-large;
+
+div.user-form p{
+  font-size: x-large;
   font-weight: bold;
   font-family: Arial;
-color: white;
+  color: white;
   margin: 0  0 1rem 0;
 }
 
-div.main-form input,
-div.main-form select{
+div.user-form input,
+div.user-form select{
   margin: 0.7rem 0;
   font-size: large;
   border-radius: 5px;
@@ -39,14 +43,14 @@ div.main-form select{
   padding: 0.2rem 0.5rem 0.2rem 0.5rem;
 }
 
-div.main-form > div{
+div.user-form > div{
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-div.main-form button{
+div.user-form button{
 
   padding: 0.2rem 0.3rem;
   background-color: #df831a;
@@ -56,16 +60,23 @@ div.main-form button{
   font-size: medium;
 }
 
-div.main-form button:hover{
+div.user-form button:hover{
 
-   background-color: #ff941e;
-   color: white;
- }
-div.main-form button:active{
+  background-color: #ff941e;
+  color: white;
+}
+div.user-form button:active{
 
   background-color: #b0cac7;
   color: #001244;
 }
-div.main-form select{
-width: 100%;
+
+div.user-form button:disabled{
+
+  background-color: #728784;
+  color: #b1c8c5;
+}
+
+div.user-form select{
+  width: 100%;
 }

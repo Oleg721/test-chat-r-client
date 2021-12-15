@@ -7,6 +7,7 @@
   background-color: #318fb5;
   align-items: center;
   padding: 1rem;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
 }
 a {
   color: white;

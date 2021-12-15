@@ -1,0 +1,47 @@
+<div class="user-form" [formGroup]="userForm"  novalidate >
+  <p [ngSwitch]="url">
+    <ng-template ngSwitchCase="/login">Login</ng-template>
+    <ng-template ngSwitchCase="/sign-up">Sign-Up</ng-template>
+  </p>
+
+
+
+  <input type="text"
+         formControlName="userName"
+         placeholder="Login"
+  />
+  <input type="password"
+         formControlName="userPassword"
+         placeholder="Password"/>
+
+  <select name="role"
+          *ngIf="url === '/sign-up'"
+          formControlName="userRole">
+    <option value="user" selected>User</option>
+    <option value="admin">Administrator</option>
+  </select>
+
+  <div *ngIf="url === '/sign-up'">
+    <a [routerLink]="['/login']">
+      Sign In
+    </a>
+
+    <button
+      (click)="onRegistrationHandler()"
+      [disabled]="isButtonDisabled">
+      Sign Up
+    </button>
+  </div>
+
+  <div *ngIf="url === '/login'" >
+    <a [routerLink]="['/sign-up']">
+      Sign Up
+    </a>
+    <button (click)="onLoginHandler()"
+            [disabled]="isButtonDisabled">
+      Sign In
+    </button>
+  </div>
+
+</div>
+
