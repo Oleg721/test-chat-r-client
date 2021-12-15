@@ -1,0 +1,38 @@
+
+<div class="main-form">
+  <p [ngSwitch]="url">
+    <ng-template ngSwitchCase="/login">Login</ng-template>
+    <ng-template ngSwitchCase="/sign-up">Sign-Up</ng-template>
+    </p>
+  <input type="text"
+         name="userName"
+         [(ngModel)]="userName"
+         placeholder="Login"/>
+  <input type="password"
+         [(ngModel)]="password"
+         name="password"
+         placeholder="Password"/>
+
+  <select name="role" *ngIf="url === '/sign-up'" [(ngModel)]="role">
+    <option value="user" selected>User</option>
+    <option value="admin">Administrator</option>
+  </select>
+
+  <div class="login-btn" *ngIf="url === '/sign-up'">
+    <a [routerLink]="['/login']">
+      Sign Up
+    </a>
+    <button (click)="onClickHendler()" >Sign In</button>
+  </div>
+
+  <div class="login-btn" *ngIf="url === '/login'" >
+    <a [routerLink]="['/sign-up']">
+      Sign In
+    </a>
+    <button >Sign Up</button>
+  </div>
+</div>
+<script>
+    (()=>console.log(this))()
+
+</script>
