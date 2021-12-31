@@ -1,0 +1,26 @@
+:host{
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0.8;
+}
+
+mat-card{
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+}
+mat-card-content,
+mat-card-actions{
+  display: flex;
+  justify-content: center;
+}
+mat-card-content{
+margin: 1rem 0 2rem 0;
+}
+.mat-icon{
+
+  font-size: 5rem;
+  height: 5rem;
+  width: 5rem;
+}

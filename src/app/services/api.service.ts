@@ -6,11 +6,12 @@ import { Observable ,  throwError } from 'rxjs';
 //import { JwtService } from './jwt.service';
 import { catchError } from 'rxjs/operators';
 
+
 @Injectable()
 export class ApiService {
   constructor(
     private http: HttpClient,
-    //private jwtService: JwtService
+   // private jwtService: JwtService
   ) {}
 
   private formatErrors(error: any) {

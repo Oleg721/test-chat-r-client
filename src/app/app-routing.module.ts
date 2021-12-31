@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {AuthentificationComponent} from "./authentification/authentification.component";
+import {ChatComponent} from "./chat/chat.component";
+import {AuthPanelComponent} from "./auth-panel/auth-panel.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  {  path: 'login', component: AuthentificationComponent,pathMatch: 'full' },
-  { path: 'sign-up', component: AuthentificationComponent }
+  { path: '', redirectTo: '/sign-up', pathMatch: 'full' },
+  { path: 'sign-up', component: AuthPanelComponent,pathMatch: 'full'  },
+  { path: 'chat', component: ChatComponent ,pathMatch: 'full'  }
 ];
-
 
 
 @NgModule({

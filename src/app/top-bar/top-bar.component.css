@@ -1,14 +1,3 @@
-:host {
-  display: flex;
-  width: 100%;
-  height: 5rem;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: #318fb5;
-  align-items: center;
-  padding: 1rem;
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-}
-a {
-  color: white;
+.example-spacer {
+  flex: 1 1 auto;
 }
