@@ -1,15 +1,24 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button
+          (click)="toggleSidePanel()"
+          class="example-icon"
+          aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
   <span>Menu</span>
-  <button (click)="onHome()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button
+          (click)="onHome()"
+          class="example-icon"
+          aria-label="Example icon-button with menu icon">
     <mat-icon>home</mat-icon>
   </button>
   <span>Home</span>
   <span class="example-spacer"></span>
   <span >LogOut</span>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <button mat-icon-button
+          (click)="onLogOut()"
+          class="example-icon"
+          aria-label="Example icon-button with share icon">
     <mat-icon>login</mat-icon>
   </button>
 </mat-toolbar>

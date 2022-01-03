@@ -1,0 +1,14 @@
+<div class="menu-header">
+  <mat-icon color="primary"  class="main-user-icon"  aria-hidden="false" >person</mat-icon>
+  <span >{{user?.username}}</span>
+</div>
+
+<mat-divider ></mat-divider>
+<div class="user-list">
+  <ul>
+    <li *ngFor="let user of userList">
+      <app-user-item [user]="user"></app-user-item>
+      <mat-divider></mat-divider>
+    </li>
+  </ul>
+</div>

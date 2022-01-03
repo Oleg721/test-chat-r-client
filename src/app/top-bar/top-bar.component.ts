@@ -1,10 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {OidcSecurityService} from "angular-auth-oidc-client";
 import {Router} from "@angular/router";
+import {SidePanelService} from "../services";
 
-/**
- * @title Basic toolbar
- */
 @Component({
   selector: 'top-bar',
   templateUrl: 'top-bar.component.html',
@@ -13,49 +11,25 @@ import {Router} from "@angular/router";
 export class TopBarComponent implements OnInit {
 
   constructor(private oidcSecurityService: OidcSecurityService,
-              private router: Router) {
+              private router: Router,
+              private sidePanelService: SidePanelService) {
   }
+
+  toggleSidePanel(){
+      console.log("toggle in TOP-bar")
+      this.sidePanelService.toggle();
+  }
+
   onHome(){
     this.router.navigate(["/"])
   }
-  ngOnInit(): void {
 
+  onLogOut(){
+    console.log("LOGOUT")
+    this.oidcSecurityService.logoff();
+  }
+
+  ngOnInit(): void {
   }
 }
 
-
-
-
-// export class TopBarComponent implements OnInit {
-//
-//   isAuthenticated: boolean = false;
-//
-//   constructor( private oidcSecurityService: OidcSecurityService,
-//                private router: Router) {
-//   }
-//
-//
-//   onAuth(){
-//     console.log("click!!!!!!")
-//     this.oidcSecurityService.authorize();
-//   }
-//
-//   onLogOut(){
-//     console.log("LogOut!!!!")
-//     this.oidcSecurityService.logoff();
-//   }
-//
-//   ngOnInit(): void {
-//
-//     this.oidcSecurityService.checkAuth().subscribe(({ isAuthenticated, userData}) =>{
-//       console.log("ngOnInit "+ isAuthenticated);
-//       this.isAuthenticated = isAuthenticated;
-//       if(isAuthenticated){
-//         this.router.navigate(['/chat']);
-//       }
-//     })
-//
-//
-//
-//   }
-// }

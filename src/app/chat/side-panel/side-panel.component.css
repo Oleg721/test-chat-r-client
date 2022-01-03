@@ -1,0 +1,33 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.menu-header{
+  display: flex;
+  align-items: center;
+  font-size: large;
+  font-weight: bolder;
+  height: 5rem;
+  padding-left: 1.5rem;
+}
+
+.main-user-icon{
+  font-size: 3rem;
+  height:3rem;
+  width: 3.5rem;
+}
+
+.menu-header + mat-divider{
+  border-top-width: 2px;
+}
+
+
+.menu-header > span{
+  color: #3f51b5;
+}
+
+.user-list{
+  overflow: auto;
+}

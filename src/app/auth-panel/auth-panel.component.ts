@@ -19,6 +19,7 @@ export class AuthPanelComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.oidcSecurityService.checkAuth().subscribe(({ isAuthenticated, userData, accessToken}) => {
       console.log(accessToken);
       console.log(isAuthenticated);

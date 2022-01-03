@@ -1,0 +1,15 @@
+:host{
+  display: flex;
+}
+button{
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+flex-grow: 1;
+}
+mat-icon{
+  color: green;
+}
+.user-name{
+  margin-left: 0.5em;
+}

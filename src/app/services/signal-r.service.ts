@@ -13,11 +13,11 @@ export class SignalRService {
 
   constructor(private oidcSecurityService: OidcSecurityService) {
     console.log( oidcSecurityService.getAccessToken());
-
-    const option = {  accessTokenFactory: oidcSecurityService.getAccessToken };
+    const options = {  accessTokenFactory: ()=> oidcSecurityService.getAccessToken() };
+    console.log(options);
     this.connection = new signalR.HubConnectionBuilder()
       .configureLogging(signalR.LogLevel.Information)
-      .withUrl(environment.chatApiUrl + '/chat', option)
+      .withUrl(environment.chatApiUrl + '/chat', options)
       .build();
   }
 
