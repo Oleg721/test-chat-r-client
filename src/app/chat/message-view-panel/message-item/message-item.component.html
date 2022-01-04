@@ -1,0 +1,9 @@
+
+<div class="message-item-wrapper" [class.current-user-message]="isCurrentUserMessage">
+  <div mat-card-avatar class="message-avatar" >{{userName?.[0]?.toUpperCase() || "?"}}</div>
+  <mat-card class="example-card">
+    <span class="message-item-name">{{userName}}</span>  <span >{{isCurrentUserMessage}}</span>
+    <span class="message-item-date">{{date | date:'medium'}}</span>
+    <mat-card-content>{{text}}</mat-card-content>
+  </mat-card>
+</div>

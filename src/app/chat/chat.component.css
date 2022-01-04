@@ -1,13 +1,23 @@
 :host{
   display: flex;
   flex-grow: 1;
+  height: calc(100% - 64px);
 }
 .example-container {
   display: flex;
   flex-grow: 1;
   border: 1px solid rgba(0, 0, 0, 0.5);
+  flex-direction: column;
 }
 
+app-message-view-panel{
+
+}
+
+mat-drawer-content{
+  display: flex;
+  flex-direction: column;
+}
 
 .example-sidenav-content {
   display: flex;
@@ -16,7 +26,10 @@
   justify-content: center;
 }
 
-.example-sidenav {
+app-send-message-panel{
+  justify-self: end;
+}
 
+.example-sidenav {
   width: 15rem;
 }

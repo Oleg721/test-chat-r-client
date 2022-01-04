@@ -3,6 +3,9 @@ import {SignalRService, SidePanelService} from "../services";
 import {OidcSecurityService} from "angular-auth-oidc-client";
 import {HubConnectionState} from "@microsoft/signalr";
 import {User} from "../models";
+import {ChatUserService} from "../services/chat-user.service";
+import {MessagesService} from "../services/messages.service";
+import {Message} from "../models/message";
 
 
 @Component({
@@ -14,19 +17,28 @@ export class ChatComponent implements OnInit {
 
   @ViewChild('drawer') drawer?: any;
   isOpenSidepanel: boolean;
-  user: User | undefined
+  user: User | undefined;
+  userList: User[] = [];
+  messageList: Message<string>[] = []
 
   constructor(private signalRService: SignalRService,
               private oidcSecurityService: OidcSecurityService,
-              private sidePanelService: SidePanelService) {
+              private sidePanelService: SidePanelService,
+              private chatUserService: ChatUserService,
+              private messagesService: MessagesService ) {
     this.isOpenSidepanel = sidePanelService.isOpen;
   };
 
 
   ngOnInit(): void {
+
+    this.messageList = this.messagesService.getMessages();
+
+    this.userList = [...this.chatUserService.getUsers().values()];
+
     this.oidcSecurityService.checkAuth().subscribe(({userData}) => {
-     console.log(userData);
-     this.user = {username: userData.name, role: ""}
+       console.log(userData);
+       this.user = {username: userData.name, role: "", id: userData.sub}
     })
 
     this.sidePanelService.checkChanges().subscribe((data: any)=>{

@@ -4,11 +4,11 @@
               class="example-sidenav"
               mode="side"
               [opened] ="isOpenSidepanel">
-    <app-side-panel [user]="user"></app-side-panel>
+    <app-side-panel [userList]="userList" [user]="user"></app-side-panel>
   </mat-drawer>
-
-  <div  class="example-sidenav-content">
-
-  </div>
+<mat-drawer-content>
+  <app-message-view-panel [messageList]="messageList" [currentUserId]="user?.id"></app-message-view-panel>
+  <app-send-message-panel></app-send-message-panel>
+</mat-drawer-content>
 
 </mat-drawer-container>

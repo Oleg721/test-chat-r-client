@@ -1,0 +1,29 @@
+:host{
+  height: 3rem;
+  background: #3f51b5;
+  display: flex;
+  padding: 0 1rem 0 1rem;
+  align-items: center;
+
+}
+input{
+  font-size: 1rem;
+  height: 1.7rem;
+  outline:none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 0.7rem 0 0.7rem;
+  display: flex;
+  flex-grow: 1;
+}
+
+button{
+  margin: 0 0 0.25rem 0.7rem;
+  color: white;
+}
+
+button:hover{
+  color: #ca50ef;
+}
+
+

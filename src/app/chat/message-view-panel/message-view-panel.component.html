@@ -1,0 +1,6 @@
+
+<app-message-item *ngFor="let message of messageList"
+                  [userName]="message.userName"
+                  [date]="message.date"
+                  [text]="message.text"
+                  [isCurrentUserMessage]="currentUserId == message.userId"></app-message-item>
