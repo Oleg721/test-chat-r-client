@@ -4,7 +4,7 @@
               class="example-sidenav"
               mode="side"
               [opened] ="isOpenSidepanel">
-    <app-side-panel [userList]="userList" [user]="user"></app-side-panel>
+    <app-side-panel [userList]="userList" [user]="user" [isConnected]="isConnected"></app-side-panel>
   </mat-drawer>
 <mat-drawer-content>
   <app-message-view-panel [messageList]="messageList" [currentUserId]="user?.id"></app-message-view-panel>

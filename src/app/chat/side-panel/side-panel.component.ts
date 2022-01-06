@@ -10,6 +10,7 @@ export class SidePanelComponent implements OnInit {
 
   @Input() user: User | undefined;
   @Input() userList: User[] = [];
+  @Input() isConnected: boolean = false;
 
   constructor() {
   }

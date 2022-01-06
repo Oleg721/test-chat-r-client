@@ -31,3 +31,18 @@
 .user-list{
   overflow: auto;
 }
+
+.main-user-icon-offline,
+.main-user-icon-online{
+  display: flex;
+  flex-grow: 1;
+  justify-content: end;
+  padding-right: 1.5rem;
+}
+
+.main-user-icon-offline{
+  color: red;
+}
+.main-user-icon-online{
+  color: green;
+}

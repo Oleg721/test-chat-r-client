@@ -11,7 +11,6 @@
 }
 
 app-message-view-panel{
-
 }
 
 mat-drawer-content{
@@ -33,3 +32,5 @@ app-send-message-panel{
 .example-sidenav {
   width: 15rem;
 }
+
+

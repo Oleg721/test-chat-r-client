@@ -1,5 +1,9 @@
+import {Colors} from "./colors";
+
+
 export interface User {
   id: string;
-  username: string;
-  role: string;
+  userName: string;
+  role?: string;
+  color: Colors;
 }

@@ -19,7 +19,8 @@ export class ChatComponent implements OnInit {
   isOpenSidepanel: boolean;
   user: User | undefined;
   userList: User[] = [];
-  messageList: Message<string>[] = []
+  messageList: Message<string>[] = [];
+  isConnected: boolean = false;
 
   constructor(private signalRService: SignalRService,
               private oidcSecurityService: OidcSecurityService,
@@ -32,13 +33,16 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.chatUserService.checkUsers().subscribe(value => this.userList = value);
+
+    this.signalRService.checkConnect().subscribe(value => {
+      this.isConnected  = value;
+    })
+
     this.messageList = this.messagesService.getMessages();
-
     this.userList = [...this.chatUserService.getUsers().values()];
-
     this.oidcSecurityService.checkAuth().subscribe(({userData}) => {
-       console.log(userData);
-       this.user = {username: userData.name, role: "", id: userData.sub}
+       this.user = {userName: userData.name, role: "", id: userData.sub, color : 0}
     })
 
     this.sidePanelService.checkChanges().subscribe((data: any)=>{
